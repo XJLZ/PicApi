@@ -9,7 +9,6 @@ def GetPic():
     pid = json_data['data'][0]['pid']
     open(r'./json/{0}.json'.format(pid), 'wb').write(api.content)
     print('Create Json Success!')
-#     url = 'https://i.pixiv.cat/img-original/img/2019/01/16/16/25/23/72683488_p0.jpg'
     pic = get(pic_url, stream=True)
     if(pic.status_code == 200):
         open(r'./pic/{0}.jpg'.format(pid), 'wb').write(pic.content)
