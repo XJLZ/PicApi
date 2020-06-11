@@ -1,7 +1,16 @@
 import json
+import time
+import hashlib
+import time
+from datetime import datetime
 from requests import get
 
 def GetPic():
+    
+    local_time = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S+08:00')
+    Hash = hashlib.md5((local_time + hash_secret).encode('utf-8')).hexdigest()
+    print(local_time)
+    print(Hash)
     api_url = r'https://api.lolicon.app/setu/?apikey=962440885eb117e14f71d1'
     api = get(api_url)
     json_data = json.loads(api.text)
