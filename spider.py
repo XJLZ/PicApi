@@ -8,7 +8,7 @@ from requests import get
 def GetPic():
     
     local_time = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S+08:00')
-    Hash = hashlib.md5((local_time + hash_secret).encode('utf-8')).hexdigest()
+    Hash = hashlib.md5((local_time + 'lsACyCD94FhDUtGTXi3QzcFE2uU1hqtDaKeqrdwj').encode('utf-8')).hexdigest()
     print(local_time)
     print(Hash)
     api_url = r'https://api.lolicon.app/setu/?apikey=962440885eb117e14f71d1'
